@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="chat.css">
+	<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitch Mender Login
+    </title>
+</head>
+<body>
+    <div class="adminpage">
+        <div class="navbar" id="un">
+            <table style="width:100%">
+                <tr>
+                    <th style="width: 50%;">
+                        <img src="chatbotlogo.png" alt="" id="logo">
+                    </th>
+                    <th  style="width: 10%;" id="nav">
+                        
+                        <a href="#" id="inbox">Inbox</a>
+                    </th>
+                    <th  style="width: 10%;" id="nav">
+                      <a href="#" id="ndata">New Data</a>
+                    </th>
+                    <th  style="width: 10%;" id="nav">
+                        <a href="#" id="logout">Logout</a>
+                    </th>
+                </tr>
+            </table>    
+        </div>
+
+        <div class="inbox" >
+          <div class="scroll1" content="width=device-width, height=device-height, initial-scale=0.5">
+          <table class="table" id="inboxtable">
+<thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Date</th>
+    <th scope="col">Errortype</th>
+    <th scope="col">Error Line</th>
+    <th scope="col">Image donload</th>
+  </tr>
+</thead>
+<tbody class="sscroll" id="inmsg">
+ 
+  
+</tbody>
+</table>
+</div>
+
+      </div>
+
+        <div class="datainsert" style="display: none;">
+
+            <div class="adddata">
+                <section class="form">
+                  <header><center>ADD NEW DATA</center></header>
+                  <form action="#" id="datafeed" >
+                    
+                    <div class="field input">
+                      <label>Type of error</label>
+                      <select name="error"  id="syntyp" type="text">
+                        <option value="">select error type *</option>
+                        <option value="AssertionError">AssertionError</option>
+                        <option value="AttributeError">AttributeError</option>
+                        <option value="EOFError">EOFError</option>
+                        <option value="FloatingPointError">FloatingPointError</option>
+                        <option value="GeneratorExit">GeneratorExit</option>
+                        <option value="ImportError">ImportError</option>
+                        <option value="IndexError">IndexError</option>
+                        <option value="KeyError">KeyError</option>
+                        <option value="KeyboardInterrupt">KeyboardInterrupt</option>
+                        <option value="MemoryError">MemoryError</option>
+                        <option value="NameError">NameError</option>
+                        <option value="NotImplementedError">NotImplementedError</option>
+                        <option value="OSError">OSError</option>
+                        <option value="OverflowError">OverflowError</option>
+                        <option value="ReferenceError">ReferenceError</option>
+                        <option value="RuntimeError">RuntimeError</option>
+                        <option value="StopIteration">StopIteration</option>
+                        <option value="SyntaxError">SyntaxError</option>
+                        <option value="IndentationError">IndentationError</option>
+                        <option value="TabError">TabError</option>
+                        <option value="SystemError">SystemError</option>
+                        <option value="SystemExit">SystemExit</option>
+                        <option value="TypeError">TypeError</option>
+                        <option value="UnboundLocalError">UnboundLocalError</option>
+                        <option value="UnicodeError">UnicodeError</option>
+                        <option value="UnicodeEncodeError">UnicodeEncodeError</option>
+                        <option value="UnicodeDecodeError">UnicodeDecodeError</option>
+                        <option value="UnicodeTranslateError">UnicodeTranslateError</option>
+                        <option value="ValueError">ValueError</option>
+                        <option value="ZeroDivisionError">ZeroDivisionError</option>
+    
+                      </select>
+                    </div>
+                    <div class="field input">
+                      <label>Keyword/solution (1)</label>
+                      <input type="text"  placeholder="Enter Keyword/solution (1) * " id="k1"required>
+                      
+                    </div>
+                    <div class="field input">
+                        <label>Keyword/solution (2)</label>
+                        <input type="text"  placeholder="Enter Keyword/solution (2) " id="k2">
+                        
+                      </div>
+                  </form>
+                  <div class="field button">
+                    <br>
+                <center><input type="submit" name="submit" value="Add New Data" id="ndatasubmit">
+               </center>
+                  </div>
+                </section>
+              </div>
+        </div>
+
+        
+
+
+
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>

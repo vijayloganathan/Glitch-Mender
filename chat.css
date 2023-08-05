@@ -1,0 +1,629 @@
+body{
+    background-image: radial-gradient(#ff8a00, #e52e71);
+    background-image: radial-gradient(circle at right, #ff8a00, rgb(122, 32, 145), #e52e71);
+    height: screen;
+    width: 100%; 
+    margin: 0%;
+    padding: 0%;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+body {
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Helvetica, sans-serif;
+}
+
+.chatcontainer
+{
+    width:100%;
+    height:100%;
+    padding: 0.5%;
+}
+
+.navbar 
+{
+    margin-top: 1%;
+    height:10%;
+    background-color: white;
+    width:80%;
+    margin-left: 10%;
+    border-radius: 20px;
+}
+
+#logo
+{
+    height: 60px;
+    float:left;
+}
+
+.navbar a{
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+.navbar a
+{
+    padding: 5px;
+}
+
+#nav :hover{
+    background-color: #595a5c;
+    color: white;
+    border-radius: 5px; 
+}
+
+#contentimage
+{
+    padding-left: 5%;
+}
+
+.maincontent
+{
+    height:85%;
+    padding: 1%;
+}
+
+.image{
+float: left;
+width: 30%;
+}
+
+
+
+.chatinterface p
+{
+    float:right;
+    margin-left: 20%;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 4px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: verdana;
+    font-size: 13px;
+   
+    
+}
+
+.chatinterface h4
+{
+    float: left;
+    margin-right: 20%;
+    margin-top: 25px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 4px;
+    border-radius: 5px;
+    font-family: verdana;
+    font-size: 13px;
+   
+   
+
+}
+.chatinterface img
+{
+    width:50px;
+    height:35px;
+    float:right;
+}
+
+#compiler{
+  position: static;
+ 
+ width: 80%;
+ height:500px;
+ margin-left: 10%;
+ border-radius: 10px;
+ 
+  
+}
+
+.editor
+{
+  height: 70vh;
+  width:42%;
+  float:left;
+  padding: 0%;
+  margin-left: 5%;
+
+}
+
+#input
+{
+  margin-left: 5%;
+  min-height: 100px;
+  padding: 0%;
+  width:40%;
+  background-color: rgb(243, 240, 240,0.2);
+  color:rgb(10, 10, 10);
+  border: none;
+  
+ 
+}
+
+.output-header
+{
+  margin: 2rem 10rem; 
+  font-weight: bold;
+}
+
+.code_output
+{
+  background-color: rgb(243, 240, 240,0.2);
+  width:40%;
+  height: 200px;
+  float:right;
+  margin-right: 7.8%;
+  color:rgb(10, 9, 9);
+  
+}
+
+.al h3
+{
+  color:white;
+  float:right;
+  margin-left:5% ;
+ 
+}
+
+.al button{
+  margin-right: 10%;
+  margin-top: 1%;
+  background-color: rgb(25, 189, 25);
+  border:none;
+  border-radius: 10px;
+  padding: 0.5%;
+  padding-left: 3%;
+  padding-right: 3%;
+  color: white;
+  font-size: 15px;
+}
+.out h3
+{
+  color:white;
+  float:right;
+  margin-right:32% ;
+}
+
+
+.editor
+{
+    height: 70vh;
+    width:42%;
+    float:left;
+    margin: 0%;
+    padding: 0%;
+    margin-left: 5%;
+
+}
+
+
+:root {
+    --body-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --msger-bg: #fff;
+    --border: 2px solid #ddd;
+    --left-msg-bg: #ececec;
+    --right-msg-bg: #579ffb;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
+
+  
+  .msger {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 867px;
+    margin: 25px 10px;
+    height: calc(100% - 50px);
+    border: var(--border);
+    border: transparent;
+    height: 80vh;
+  }
+  
+  .msger-header-title {
+    
+    padding: 10px;
+    border-bottom: var(--border);
+    background:rgb(255, 255, 255,0.4);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .msger-chat {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    height: 60vh;
+  }
+  .msger-chat::-webkit-scrollbar {
+    width: 6px;
+  }
+  .msger-chat::-webkit-scrollbar-track {
+    background:transparent;
+  }
+  .msger-chat::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  .msg {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+  }
+  .msg:last-of-type {
+    margin: 0;
+  }
+  .msg-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+  }
+  .msg-bubble {
+    max-width: 450px;
+    padding: 15px;
+    border-radius: 15px;
+    background: var(--left-msg-bg);
+  }
+  .msg-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .msg-info-name {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  .msg-info-time {
+    font-size: 0.85em;
+  }
+  
+  .left-msg .msg-bubble {
+    border-bottom-left-radius: 0;
+  }
+  .msg-text
+  {
+    text-align: justify;
+  }
+  .right-msg {
+    flex-direction: row-reverse;
+  }
+  .right-msg .msg-bubble {
+    background: var(--right-msg-bg);
+    color: #fff;
+    border-bottom-right-radius: 0;
+  }
+  .right-msg .msg-img {
+    margin: 0 0 0 10px;
+  }
+  
+  .msger-inputarea {
+    display: flex;
+    padding: 10px;
+    border-top: var(--border);
+    background:rgb(255, 255, 255,0.4);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .msger-inputarea * {
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 1em;
+  }
+  .msger-input {
+    flex: 1;
+    background: #ddd;
+  }
+  .msger-send-btn {
+    margin-left: 10px;
+    background: rgb(0, 196, 65);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.23s;
+  }
+  .msger-send-btn:hover {
+    background: rgb(0, 180, 50);
+  }
+  
+  .msger-chat {
+    background:rgb(255, 255, 255,0.4);
+    background-image: url("chatbotlogo.png");
+    background-repeat: no-repeat;
+  background-position: center;
+  }
+  
+  .msger
+  {
+    float:right;
+    width: 60%;
+    margin-right: 2%;
+  }
+
+  .sound img
+{
+    height: 40px;
+}
+.sound{
+    float:left;
+    margin-top: 2%;
+}
+#feedimg
+{
+    height: 40px;
+}
+
+.feedback
+{
+    
+    
+    align-items: flex-start;
+    float:right;
+    margin-top: 36%;
+    border-radius: 30px;
+    padding-right: 1%;
+}
+
+.wrapper
+{
+    width:40%;
+    float:right;
+    margin-top: 5%;
+    margin-right: 10%;
+    background-color: rgb(224, 222, 222,0.5);
+    padding-right: 1%;
+    border-radius: 30px;
+}
+.wrapper label
+{
+    font-size: 20px;
+}
+.form{
+    padding: 25px 30px;
+  }
+  .form header{
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .form form{
+    margin: 20px 0;
+  }
+  .form form .error-text{
+    color: #721c24;
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 5px;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    margin-bottom: 10px;
+    display: none;
+  }
+
+  .form form .field{
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+    position: relative;
+  }
+  .form form .field label{
+    margin-bottom: 2px;
+  }
+  .form form .input input{
+    height: 40px;
+    width: 90%;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  .form form .field input{
+    outline: none;
+  }
+  .form form .image input{
+    font-size: 17px;
+  }
+.button input{
+    height: 45px;
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    padding: 10px;
+    padding-left: 15%;
+    padding-right: 15%;
+    background: rgb(8, 8, 8,0.8);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 13px;
+  }
+.wrapper header{
+    text-align: center;
+}
+
+/*admin page style*/
+#inboxtable
+{
+    background-color: rgb(238, 234, 234,0.4);
+    width:80% ;
+    margin-left: 10%;
+    margin-top:2%;
+}
+
+tbody tr td a{
+   
+    padding: 2%;
+    background-color: rgb(238, 234, 234,0.9);
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+
+.adddata
+{
+    width:40%;
+    align-items: center;
+    margin-top: 3%;
+    margin-left: 30%;
+    background-color: rgb(224, 222, 222,0.5);
+    padding-right: 1%;
+    border-radius: 30px;
+}
+.adddata label
+{
+    font-size: 15px;
+}
+.form{
+    padding: 25px 30px;
+  }
+  .form header{
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .form form{
+    margin: 20px 0;
+  }
+  .form form .error-text{
+    color: #721c24;
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 5px;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    margin-bottom: 10px;
+    display: none;
+  }
+
+  .form form .field{
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+    position: relative;
+  }
+  .form form .field label{
+    margin-bottom: 2px;
+  }
+  .form form .input input{
+    height: 35px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: rgb(51, 50, 50);
+  }
+  .form form .field input{
+    outline: none;
+  }
+
+.button input{
+    height: 40px;
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    padding: 8px;
+    padding-left: 15%;
+    padding-right: 15%;
+    background: rgb(8, 8, 8,0.8);
+    border-radius: 5px;
+    cursor: pointer;
+    width:74%;
+    
+  }
+.adddata header{
+    text-align: center;
+}
+#imageinput
+{
+  width: 100%;
+}
+#syntyp
+{
+    height:35px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color:rgb(51, 50, 50);
+    width:100%;
+}
+#errortype
+{
+    height: 35px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: rgb(51, 50, 50);
+    padding: 0 10px;
+}
+
+#un a
+{
+    text-decoration: none;
+}
+
+#un
+{
+    margin-top: 1%;
+}
+
+.adminpage
+{
+  width: 100%;
+  height:100%
+}
+
+.in
+{
+  margin-top: 5%;
+}
+
+#micbtn
+{
+  
+  background-color:  rgb(0, 196, 65);
+  margin: 0%;
+  margin-left: 1%;
+  
+}
+
+#mic
+{
+  margin: 0%;
+  padding: 0%;
+  color: white;
+  
+}
+
+#pycompiler
+{
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 2%;
+  height: 80vh;
+}

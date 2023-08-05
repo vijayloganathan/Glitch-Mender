@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+	<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>GLITCH MENDER - loginpage</title>
+</head>
+<body>
+    <table id="loginForm">
+        <tr>
+            <td>
+                <div class="frontimage">
+                    <img src="chat-removebg-preview.png" alt="">
+                </div>
+            </td>
+            <td>
+                <div class="container" id="container">
+                    <div class="form-container sign-up-container">
+                        <form action="#" id="signup">
+                            <h1>Create Account</h1>
+                            
+                            <input type="text" placeholder="Name" id="username"/>
+                            <input type="email" placeholder="Email" id="useremail" />
+                            <input type="password" placeholder="Password" id="userpassword"/>
+                            <button id="signupbtn" >Sign Up</button>
+                            <div id="loader"></div>
+                        </form>
+                    </div>
+                    <div class="form-container sign-in-container">
+                        <form action="#" id="login">
+                            <h1>Sign in</h1>
+                            
+                            <input type="email" placeholder="Email" id="useremail1"/>
+                            <input type="password" placeholder="Password" id="userpassword1"/>
+                            <a href="#" id="forgotpwd">Forgot your password?</a>
+                            <button id="login_submit">Sign In</button>
+                            <div id="loader"></div>
+                        </form>
+                    </div>
+                    <div class="overlay-container">
+                        <div class="overlay">
+                            <div class="overlay-panel overlay-left">
+                                <img src="chatlogo1.png" id="chatlogo">                                
+                                <h1>Welcome Back!</h1>
+                                <p>To keep connected with us please login with your personal info</p>
+                                <button class="ghost" id="signIn">Sign In</button>
+                            </div>
+                            <div class="overlay-panel overlay-right">
+                                <img src="chatlogo1.png" id="chatlogo">
+                                <h1>Hello, Friend!</h1>
+                                <p>Enter your personal details and start journey with us</p>
+                                <button class="ghost" id="signUp">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </td>
+        </tr>
+    </table>
+	
+	
+
+
+    <script src="app.js"></script>
+</body>
+</html>

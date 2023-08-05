@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="chat.css">
+	<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitch Mender Chatbot Page</title>
+</head>
+<body>
+    
+    <div class="chatcontainer">
+        <div class="sound">
+            <img src="mute.png" id="mute" style="display: none;">
+            <img src="unmute.png" id="unmute" >
+           
+        </div>
+        <div class="navbar">
+            <table style="width:100%">
+                <tr>
+                    <th style="width: 50%;">
+                        <img src="chatbotlogo.png" alt="" id="logo">
+                    </th>
+                    <th  style="width: 10%;" id="nav">
+                        <a href="#" id="bot">Chatbot</a>
+                    </th>
+                    <th  style="width: 20%;" id="nav">
+                        <a href="#" id="complier">Python Compiler</a>
+                    </th>
+                    <th  style="width: 10%;" id="nav">
+                        <a href="#" id="logout">Logout</a>
+                    </th>
+                </tr>
+            </table>    
+        </div>
+        <div class="maincontent">
+            <div class="chatbot">
+                <div class="image">
+                    <img src="chat-removebg-preview.png" alt="" id="contentimage">
+                </div>
+                <div class="feedback">
+                    <img src="feed.png" alt="" id="feedimg">
+                   
+                </div>
+                    <section class="msger">
+                        
+                          <div class="msger-header-title">
+                           <center><h1>CHAT WITH AI</h1></center>
+                          </div>
+                          
+                      
+                        <main class="msger-chat">
+                          <div class="msg left-msg">
+                            <div
+                             class="msg-img"
+                             style="background-image: url(https://imgs.search.brave.com/N3WjX76hjSx9UK5XkE0jjsTFIMQF9MO-jdAm6uAFTIk/rs:fit:346:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5B/ZGhjWEtqNGZCbWR4/Wjhya1V6RzdRQUFB/QSZwaWQ9QXBp)"
+                            ></div>
+                      
+                            <div class="msg-bubble">
+                              <div class="msg-info">
+                                <div class="msg-info-name">Chat AI</div>
+                                <div class="msg-info-time" id="gettime"></div>
+                              </div>
+                      
+                              <div class="msg-text">
+                                Hi, I am Glitch Mender.<br>How can I help you?
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <div class="msg right-msg">
+                            
+                          </div>
+                        </main>
+                      
+                        <form class="msger-inputarea" id="typearea">
+                          <input type="text" class="msger-input" placeholder="Enter your message..." id="messtype">
+                         
+                          <button type="submit" class="msger-send-btn" id="sendbtn">Send</button>
+                          <button id="micbtn"> <i class="fa fa-microphone icon" id="mic"></i></button>
+                        </form>
+                      </section>
+                </div>
+                 <div class="wrapper" style="display: none;">
+                <section class="form">
+                  <header><center>Feed Back Form</center></header>
+                  <form action="#" id="feedbackform" >
+                    
+                    <div class="field input">
+                      <label>Type of error</label>
+                      <select name="error"  id="errortype" type="text">
+                        <option value="">select error type *</option>
+                        <option value="AssertionError">AssertionError</option>
+                        <option value="AttributeError">AttributeError</option>
+                        <option value="EOFError">EOFError</option>
+                        <option value="FloatingPointError">FloatingPointError</option>
+                        <option value="GeneratorExit">GeneratorExit</option>
+                        <option value="ImportError">ImportError</option>
+                        <option value="IndexError">IndexError</option>
+                        <option value="KeyError">KeyError</option>
+                        <option value="KeyboardInterrupt">KeyboardInterrupt</option>
+                        <option value="MemoryError">MemoryError</option>
+                        <option value="NameError">NameError</option>
+                        <option value="NotImplementedError">NotImplementedError</option>
+                        <option value="OSError">OSError</option>
+                        <option value="OverflowError">OverflowError</option>
+                        <option value="ReferenceError">ReferenceError</option>
+                        <option value="RuntimeError">RuntimeError</option>
+                        <option value="StopIteration">StopIteration</option>
+                        <option value="SyntaxError">SyntaxError</option>
+                        <option value="IndentationError">IndentationError</option>
+                        <option value="TabError">TabError</option>
+                        <option value="SystemError">SystemError</option>
+                        <option value="SystemExit">SystemExit</option>
+                        <option value="TypeError">TypeError</option>
+                        <option value="UnboundLocalError">UnboundLocalError</option>
+                        <option value="UnicodeError">UnicodeError</option>
+                        <option value="UnicodeEncodeError">UnicodeEncodeError</option>
+                        <option value="UnicodeDecodeError">UnicodeDecodeError</option>
+                        <option value="UnicodeTranslateError">UnicodeTranslateError</option>
+                        <option value="ValueError">ValueError</option>
+                        <option value="ZeroDivisionError">ZeroDivisionError</option>
+    
+                      </select>
+                    </div>
+                    <div class="field input">
+                      <label>Line of the program</label>
+                      <input type="text"  placeholder="Enter the line " id="proline"required>
+                      
+                    </div>
+                    <div class="field image" id="imageinput">
+                      <label>Upload the screenshot</label>
+                      <input type="file" name="image" accept="image/x-png,image/gif,image/jpeg,image/jpg" id="screenshot" required>
+                    </div>
+
+                  </form>
+                  <div class="field button">
+                    <br>
+                <center><input type="submit" name="submit" value="Submit to give feedback" id="fsubmit">
+               </center>
+                  </div>
+                </section></div>
+            </div>
+           
+            <div class="coimpler" style="display: none;">
+              <iframe src="https://trinket.io/embed/python3/833f2c86ee" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen id="pycompiler"></iframe>           
+        </div>
+
+    </div>
+    
+    <script src="chatbot.js"></script>
+</body>
+</html>
